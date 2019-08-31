@@ -14,9 +14,9 @@ class CreateLocalsTable extends Migration
     public function up()
     {
         Schema::create('locals', function (Blueprint $table) {
-            $table->Increments('local_government_id');
+            $table->Increments('id');
             $table->integer("state_id")->unsigned()->index();
-            $table->foreign('state_id')->references('state_id')
+            $table->foreign('state_id')->references('id')
             ->on('states')->onDelete('cascade');
             $table->String('local_government_name');
             $table->timestamps();
