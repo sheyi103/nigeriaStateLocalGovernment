@@ -15,10 +15,10 @@ class CreateLocalsTable extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->Increments('local_government_id');
-            $table->String('local_government_name');
             $table->integer("state_id")->unsigned()->index();
             $table->foreign('state_id')->references('state_id')
             ->on('states')->onDelete('cascade');
+            $table->String('local_government_name');
             $table->timestamps();
         });
     }
