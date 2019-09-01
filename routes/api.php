@@ -17,9 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiresource('/states', 'StateController');
+Route::apiResource('/states', 'StateController');
 
 Route::group(['prefix' => 'states'], function () {
-    Route::apiresource('/{state}/locals', 'LocalController');
+    Route::apiResource('/{state}/locals', 'LocalController');
     
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\State\StateResource;
 use App\Model\State;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class StateController extends Controller
      */
     public function index()
     {
-        //
+        return State::all();
     }
 
     /**
@@ -46,7 +47,8 @@ class StateController extends Controller
      */
     public function show(State $state)
     {
-        //
+        
+        return new StateResource($state);
     }
 
     /**
