@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\State;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\Resource;
 
-class StateCollection extends ResourceCollection
+class StateCollection extends Resource
 {
     /**
      * Transform the resource collection into an array.
