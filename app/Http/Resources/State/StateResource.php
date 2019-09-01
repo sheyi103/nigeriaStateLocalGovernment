@@ -17,6 +17,9 @@ class StateResource extends JsonResource
         return [
             'id' =>$this->id,
             'stateName'=>$this->name,
+            'href'=>[
+                'LGA'=> route('locals.index', $this->id)
+            ]
         ];
     }
 }
