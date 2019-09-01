@@ -15,7 +15,7 @@ class StateController extends Controller
      */
     public function index()
     {
-        return StateResource::collection(State::all());
+        return StateResource::collection(State::paginate(5));
     }
 
     /**

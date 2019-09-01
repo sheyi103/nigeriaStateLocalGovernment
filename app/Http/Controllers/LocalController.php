@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReviewResource;
 use App\Model\Local;
+use App\Model\State;
 use Illuminate\Http\Request;
 
 class LocalController extends Controller
@@ -12,9 +14,9 @@ class LocalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(State $state)
     {
-        //
+        return ReviewResource::collection($state->locals);
     }
 
     /**
